@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <v-select :options="options"></v-select>
+    <div class="dropdown">
+        <v-select class="selects" :options="options"></v-select>
     </div>
 </template>
 
@@ -28,11 +28,15 @@ export default {
 </script>
 
 <style>
-#dropdown-left {
-    width: 60%;
+.vs__dropdown-toggle {
+    font-size: 24px;
 }
 
-#dropdown-left button {
+.ul#vs1__listbox li {
+    font-size: 19px;
+}
+
+/*.selects {
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -46,6 +50,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+}*/
+
 
 </style>

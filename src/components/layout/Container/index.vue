@@ -3,6 +3,7 @@
     
     <Order v-if="pages == 1" />
     <OrderDetails v-if="pages == 2"/>
+    <About v-if="pages == 3"/>
     
 
     <div class="btn--group">
@@ -16,14 +17,16 @@
 
 <script>
 import Order from '../../../pages/order';
-import OrderDetails from '../../../pages/orderDetails'
+import OrderDetails from '../../../pages/orderDetails';
+import About from '../../../pages/about'
 
 export default {
     name: "Container",
 
     components: {
         Order,
-        OrderDetails
+        OrderDetails,
+        About
     },
 
     data() {
@@ -48,7 +51,8 @@ export default {
 
 <style>
 .container-body {
-    height: 425px;
+    min-height: 425px;
+    width: 100%;
 }
 
 .btn--group {

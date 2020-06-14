@@ -31,9 +31,6 @@ export default {
 <style>
 input.input-loan, input.input-loan:focus {
     font-size: 35px;
-    border: none;
-    border-bottom: 2.5px solid;
-    border-radius: 0;
     outline: none;
     box-shadow: none !important;
 }
