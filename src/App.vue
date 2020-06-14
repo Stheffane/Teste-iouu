@@ -47,7 +47,7 @@ export default {
 
 .container {
   margin: auto;
-  max-width: 700px;
+  max-width: 700px !important;
   align-items: left;
   display: flex;
 }

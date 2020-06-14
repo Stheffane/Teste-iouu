@@ -1,30 +1,37 @@
 <template>
-  <form class="container-body">
+  <div class="container-body">
+    
     <Order v-if="pages == 1" />
+    <OrderDetails v-if="pages == 2"/>
+    
 
-    <div class="btn-group">
+    <div class="btn--group">
         <button class="back-page" @click="backPage()" v-if="pages != 1">Voltar</button>
         <button class="next-page" @click="nextPage()">Continuar</button>
     </div>
-    
     {{pages}}
-  </form>
+
+  </div>
 </template>
 
 <script>
-import Order from '../../../pages/order'
+import Order from '../../../pages/order';
+import OrderDetails from '../../../pages/orderDetails'
 
 export default {
     name: "Container",
+
+    components: {
+        Order,
+        OrderDetails
+    },
 
     data() {
         return {
             pages: 1
         }
     },
-    components: {
-        Order
-    },
+
     methods: {
         backPage() {
             this.pages--;
@@ -44,9 +51,9 @@ export default {
     height: 425px;
 }
 
-.btn-group {
+.btn--group {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 button.back-page, button.next-page {
@@ -60,7 +67,7 @@ button.back-page, button.next-page {
 }
 
 button:focus {
-    outline: none;    
+    outline: none !important;    
 }
 
 button.back-page {
@@ -74,6 +81,5 @@ button.next-page {
     background-color: #41D3BD;
     border: 1px solid #41D3BD;
 }
-
 
 </style>

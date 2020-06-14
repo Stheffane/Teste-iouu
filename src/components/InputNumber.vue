@@ -1,6 +1,7 @@
 <template>
     <div>
-        <input class="input-text" placeholder="R$ 0,00" info="Você pode escolher de R$5.000 até R$200.000" type="string" value="R$ 9.999">
+        <b-form-input class="input-loan" v-model="text" type="number" :state="inputState" size="lg" placeholder="R$ 0,00" ></b-form-input>
+        <div class="mt-2">Value: {{ text }}</div>
     </div>
 </template>
 
@@ -8,12 +9,32 @@
 export default {
     name: "InputNumber",
 
-    props: {msg:String}
+    props: {msg:String},
+
+    
+    computed: {
+      inputState() {
+        let value = Number(this.text)
+      
+        return value >= 5000 && value <= 200000 ? true : false;
+      }
+    },
+
+    data() {
+      return {
+        text: ''
+      }
+    },
 }
 </script>
 
 <style>
-input {
-    
+input.input-loan, input.input-loan:focus {
+    font-size: 35px;
+    border: none;
+    border-bottom: 2.5px solid;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none !important;
 }
 </style>

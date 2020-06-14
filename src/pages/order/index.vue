@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container-standart">
         <Title msg="Qual valor de empréstimo ajudaria a sua empresa neste momento?"/>
         <InputNumber />
     </div>
@@ -20,4 +20,11 @@ export default {
 </script>
 
 <style>
+.container-standart {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
 </style>
