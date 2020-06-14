@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <form class="container-body">
     <Order v-if="pages == 1" />
 
-    <button @click="backPage()" v-if="pages != 1">Voltar</button>
-    <button @click="nextPage()">Continuar</button>
+    <div class="btn-group">
+        <button class="back-page" @click="backPage()" v-if="pages != 1">Voltar</button>
+        <button class="next-page" @click="nextPage()">Continuar</button>
+    </div>
+    
     {{pages}}
-  </div>
+  </form>
 </template>
 
 <script>
@@ -37,4 +40,40 @@ export default {
 </script>
 
 <style>
+.container-body {
+    height: 425px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button.back-page, button.next-page {
+    display: inline-block;
+    padding: 9px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-shadow: none;
+}
+
+button:focus {
+    outline: none;    
+}
+
+button.back-page {
+    color: #41D3BD;
+    background-color: #fff;
+    border: 1px solid #41D3BD;
+}
+
+button.next-page {
+    color: #fff;
+    background-color: #41D3BD;
+    border: 1px solid #41D3BD;
+}
+
+
 </style>
