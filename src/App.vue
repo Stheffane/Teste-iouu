@@ -1,21 +1,38 @@
 <template>
   <div id="app">
+    <Header :currentPage="currentPage" />
 
     <div class="container">
-      <Order/>
+      <Container @page="page"/>
     </div>
 
   </div>
 </template>
 
 <script>
-import Order from './pages/order/index.vue'
+import Header from './components/Header.vue';
+import Container from './components/layout/Container/index.vue'
 
 export default {
   name: 'App',
+
+  data () {
+    return {
+      currentPage: 1
+    }
+  },
+
   components: {
-    Order
+    Header,
+    Container
+  },
+
+  methods: {
+    page(elements){
+      this.currentPage = elements;
+    }
   }
+  
 }
 </script>
 
@@ -23,7 +40,6 @@ export default {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
   margin: 0px 60px;
 }
 
