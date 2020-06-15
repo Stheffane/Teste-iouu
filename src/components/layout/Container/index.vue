@@ -5,7 +5,7 @@
     <OrderDetails v-if="pages == 2"/>
     <About v-if="pages == 3"/>
     <AboutCompany v-if="pages == 4"/>
-    
+    <Success v-if="pages == 6"/>
 
     <div class="btn--group">
         <button class="back-page" @click="backPage()" v-if="pages != 1">Voltar</button>
@@ -21,6 +21,7 @@ import Order from '../../../pages/order';
 import OrderDetails from '../../../pages/orderDetails';
 import About from '../../../pages/about';
 import AboutCompany from '../../../pages/aboutCompany';
+import Success from '../../../pages/success';
 
 export default {
     name: "Container",
@@ -29,7 +30,8 @@ export default {
         Order,
         OrderDetails,
         About,
-        AboutCompany
+        AboutCompany,
+        Success
     },
 
     data() {
