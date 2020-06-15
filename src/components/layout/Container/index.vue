@@ -5,7 +5,7 @@
     <OrderDetails v-if="pages == 2"/>
     <About v-if="pages == 3"/>
     <AboutCompany v-if="pages == 4"/>
-    <Success v-if="pages == 6"/>
+    <Success v-if="pages == 6git"/>
 
     <div class="btn--group">
         <button class="back-page" @click="backPage()" v-if="pages != 1">Voltar</button>
