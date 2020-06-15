@@ -4,6 +4,7 @@
     <Order v-if="pages == 1" />
     <OrderDetails v-if="pages == 2"/>
     <About v-if="pages == 3"/>
+    <AboutCompany v-if="pages == 4"/>
     
 
     <div class="btn--group">
@@ -18,7 +19,8 @@
 <script>
 import Order from '../../../pages/order';
 import OrderDetails from '../../../pages/orderDetails';
-import About from '../../../pages/about'
+import About from '../../../pages/about';
+import AboutCompany from '../../../pages/aboutCompany';
 
 export default {
     name: "Container",
@@ -26,7 +28,8 @@ export default {
     components: {
         Order,
         OrderDetails,
-        About
+        About,
+        AboutCompany
     },
 
     data() {

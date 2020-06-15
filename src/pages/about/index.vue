@@ -37,6 +37,15 @@ export default {
         Title,
     },
 
+    data() {
+      return {
+        name: '',
+        email: '',
+        cpf: '',
+        tel: '',
+      }
+    },
+
     methods: {
         inputName() {
             const pattern = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
@@ -119,15 +128,6 @@ export default {
             return this.inputTel() ? true : false;
         },
 
-    },
-
-    data() {
-      return {
-        name: '',
-        email: '',
-        cpf: '',
-        tel: '',
-      }
     },
 
 }
