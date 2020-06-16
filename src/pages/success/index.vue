@@ -1,7 +1,7 @@
 <template>
     <div class="container-standart">
         <div class="resul-group">
-            <Title msg="Seus dados foram avaliados com sucesso!!!"/>
+            <Title msg="Parabéns, Seu pedido foi aprovado!!!"/>
             <img class="img--success" src="../../assets/feliz.svg" alt="Sucesso!"/>
         </div>
     </div>

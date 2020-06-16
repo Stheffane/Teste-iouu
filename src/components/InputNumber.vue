@@ -33,14 +33,14 @@ export default {
       let vlLoan = localStorage.getItem('loan');
 
       if (vlLoan){
-        vlLoan = JSON.parse.this.text;
-        vlLoan.push(this.text);
+        localStorage.clear();
+        vlLoan = this.text;
       }
       else {
         vlLoan = this.text;
       }
 
-      localStorage.setItem('loan', JSON.stringify(vlLoan));
+      localStorage.setItem('loan', vlLoan);
       
     }
   }

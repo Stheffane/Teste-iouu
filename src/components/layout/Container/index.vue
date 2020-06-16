@@ -5,15 +5,14 @@
     <OrderDetails v-if="pages == 2"/>
     <About v-if="pages == 3"/>
     <AboutCompany v-if="pages == 4"/>
-    <Validation v-if="pages == 5"/>
-    <Success v-if="pages == 6"/>
+    <Validation v-if="pages == 5" />
     
 
     <div class="btn--group">
         <button class="back-page" @click="backPage()" v-if="pages != 1 && pages != 5">Voltar</button>
         <button class="next-page" @click="nextPage()" v-if="pages != 5">Continuar</button>
     </div>
-    {{pages}}
+    <!-- {{pages}} -->
 
   </div>
 </template>
@@ -23,7 +22,6 @@ import Order from '../../../pages/order';
 import OrderDetails from '../../../pages/orderDetails';
 import About from '../../../pages/about';
 import AboutCompany from '../../../pages/aboutCompany';
-import Success from '../../../pages/success';
 import Validation from '../../../pages/validation';
 
 export default {
@@ -34,7 +32,6 @@ export default {
         OrderDetails,
         About,
         AboutCompany,
-        Success,
         Validation
     },
 
@@ -53,8 +50,10 @@ export default {
         nextPage() {
             this.pages++;
             this.$emit('page', this.pages);
-        }
-    }
+        },
+
+    },
+
 }
 </script>
 

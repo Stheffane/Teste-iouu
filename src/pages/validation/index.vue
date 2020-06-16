@@ -1,55 +1,61 @@
 <template>
     <div class="container-standart validation">
-        <div class="text-center" >
+        <Title msg="Estamos avaliando sua empresa, por favor aguarde..." v-if="result == 0"/>
+        <div class="text-center" v-if="result == 0">
             <b-spinner variant="info" style="width: 3rem; height: 3rem;" label="Loading..."></b-spinner>
         </div>
 
-        <Title msg="Estamos avaliando sua empresa, por favor aguarde..."/>
+        <Success v-if="result == 1"/>
+        <Denail v-if="result == 2"/>
 
     </div>
 </template>
 
 <script>
 import Title from '../../components/Title.vue';
+import Success from '../success';
+import Denail from '../denial'
 
 export default {
     name: "Validation",
 
     components: {
         Title,
+        Success,
+        Denail
     },
 
     data() {
-
+        return {
+            result: 0
+        }
     },
 
     methods:{
-        validar() {          
+        validar() {
             
-            const emprestimo = 20000;
-            const faturamento = 100000;
-            
-            /*let loan = Number(localStorage.getItem("loan"));
-            let billing = Number(localStorage.getItem("billing"));*/
+            let loan = Number(localStorage.getItem("loan"));
+            let billing = Number(localStorage.getItem("billing"));
 
-            
-            if (emprestimo < faturamento /*loan > billing*/) {
-                console.log("emprestimo menor");
-                //aqui faz o contador que fica lá no botão ir pra página de aprovado
+            if (loan < billing) {
+                this.result = 1;
+                this.$emit('page', this.pages);
             }
             else { 
-                console.log("emprestimo maior");
-                //faz ir pra página de negado} 
+                this.result = 2;
+                this.$emit('page', this.pages);
             }
+            
+            return this.result;
         },
     },
 
-    mounted() {
-        
+    mounted() { 
+
         setInterval(() => {
         this.validar()
         }, 3000);
-        
+
     },
 
     computed: {
