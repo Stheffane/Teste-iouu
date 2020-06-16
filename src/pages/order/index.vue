@@ -16,6 +16,7 @@ export default {
         Title,
         InputNumber
     }
+    
 }
 </script>
 

@@ -8,7 +8,7 @@
         </div>
 
         <div>
-            <b-form-input v-model="billing" type="number" placeholder="Faturamento mensal" :state="ValidBilling"></b-form-input>
+            <b-form-input v-model="billing" type="number" @blur="salvarInput(billing)" placeholder="Faturamento mensal" :state="ValidBilling"></b-form-input>
             <div class="mt-2">Value: {{ billing }}</div>
         </div>
 
@@ -95,6 +95,22 @@ export default {
                 
             return true;
         },
+
+        salvarInput(billing) {
+            console.log("aqui eu" + billing);
+
+            let vlBilling = localStorage.getItem('billing');
+
+            if (vlBilling){
+                //blabla
+            }
+            else {
+                vlBilling = this.billing;
+            }
+
+            localStorage.setItem('billing', vlBilling);
+        
+        }
     },
 
     computed: {
@@ -108,6 +124,9 @@ export default {
             return value >= 10000 ? true : false;
         },
     },
+
+    
+
 
 }
 </script>

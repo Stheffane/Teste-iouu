@@ -12,6 +12,8 @@
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-localstorage": "^0.6.2",
+    "vue-reactive-storage": "git+https://github.com/ropbla9/vue-reactive-storage.git",
     "vue-select": "^3.10.3"
   },
   "devDependencies": {

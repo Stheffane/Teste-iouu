@@ -5,11 +5,13 @@
     <OrderDetails v-if="pages == 2"/>
     <About v-if="pages == 3"/>
     <AboutCompany v-if="pages == 4"/>
-    <Success v-if="pages == 6git"/>
+    <Validation v-if="pages == 5"/>
+    <Success v-if="pages == 6"/>
+    
 
     <div class="btn--group">
-        <button class="back-page" @click="backPage()" v-if="pages != 1">Voltar</button>
-        <button class="next-page" @click="nextPage()">Continuar</button>
+        <button class="back-page" @click="backPage()" v-if="pages != 1 && pages != 5">Voltar</button>
+        <button class="next-page" @click="nextPage()" v-if="pages != 5">Continuar</button>
     </div>
     {{pages}}
 
@@ -22,6 +24,7 @@ import OrderDetails from '../../../pages/orderDetails';
 import About from '../../../pages/about';
 import AboutCompany from '../../../pages/aboutCompany';
 import Success from '../../../pages/success';
+import Validation from '../../../pages/validation';
 
 export default {
     name: "Container",
@@ -31,7 +34,8 @@ export default {
         OrderDetails,
         About,
         AboutCompany,
-        Success
+        Success,
+        Validation
     },
 
     data() {
